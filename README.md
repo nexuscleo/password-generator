@@ -128,6 +128,27 @@ No arquivo `package.json`, você encontrará os seguintes scripts:
 
 ---
 
+## 🌐 Deploy Automatizado (GitHub Actions & GitHub Pages)
+
+Esta aplicação foi pré-configurada para **Deploy Contínuo (CI/CD)** automático no **GitHub Pages** através de **GitHub Actions**.
+
+### 🛠️ O que foi configurado no projeto:
+
+1. **Exportação Estática (`next.config.ts`)**:
+   - Definido `output: 'export'` e `images: { unoptimized: true }` para gerar todos os arquivos estáticos HTML, CSS (Tailwind v4), scripts e estilos do MUI na pasta `./out`.
+2. **Workflow CI/CD (`.github/workflows/deploy.yml`)**:
+   - Compilação automática do projeto no Ubuntu em cada `push` na branch `main` ou `master`.
+   - Publicação automática dos artefatos estáticos no **GitHub Pages**.
+
+### ⚙️ Como Ativar o Deploy no GitHub:
+
+1. Suba o projeto para o seu repositório no GitHub (`git push origin main`).
+2. No GitHub, vá até o seu repositório e acesse **Settings** -> **Pages**.
+3. Em **Build and deployment** -> **Source**, selecione **GitHub Actions**.
+4. Pronto! Cada `push` futuro fará o build completo e publicará o site online em `https://seu-usuario.github.io/password-generator/`.
+
+---
+
 ## 🛡️ Segurança & Privacidade
 
 > [!IMPORTANT]
