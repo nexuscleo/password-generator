@@ -145,7 +145,7 @@ Esta aplicação foi pré-configurada para **Deploy Contínuo (CI/CD)** automát
 1. Suba o projeto para o seu repositório no GitHub (`git push origin main`).
 2. No GitHub, vá até o seu repositório e acesse **Settings** -> **Pages**.
 3. Em **Build and deployment** -> **Source**, selecione **GitHub Actions**.
-4. Pronto! Cada `push` futuro fará o build completo e publicará o site online em `https://seu-usuario.github.io/password-generator/`.
+4. Pronto! Cada `push` futuro fará o build completo e publicará o site online em `https://nexuscleo.github.io/password-generator/`.
 
 ---
 
