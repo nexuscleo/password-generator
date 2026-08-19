@@ -83,7 +83,7 @@ export default function Home() {
         {/* Footer info */}
         <div className="mt-6 pt-4 border-t border-[#353942]/60 text-center">
           <span className="text-[11px] text-slate-400 font-medium">
-            Segurança Local • &copy; {new Date().getFullYear()}{" "}
+            Padrão Militar • &copy; {new Date().getFullYear()}{" "}
             <span className="text-[#b8f7e4]">nexus.DS</span>
           </span>
         </div>
