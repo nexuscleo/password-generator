@@ -5,15 +5,6 @@ import { usePasswordGenerator } from "@/hook/use-password-generator";
 import PasswordOptions from "@/components/password-options";
 import LengthSlider from "@/components/lenght-slider";
 import PasswordActions from "@/components/password-actions";
-import { SvgIcon } from "@mui/material";
-
-function ShieldLockIcon(props: React.ComponentProps<typeof SvgIcon>) {
-  return (
-    <SvgIcon {...props} viewBox="0 0 24 24">
-      <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8s0 0 0 0z" />
-    </SvgIcon>
-  );
-}
 
 export default function Home() {
   const [length, setLentgh] = useState(12);
@@ -49,8 +40,15 @@ export default function Home() {
       <div className="relative z-10 w-full max-w-[440px] p-5 sm:p-8 rounded-3xl bg-[#25272c]/95 border border-[#353942] shadow-2xl shadow-black/60 backdrop-blur-2xl transition-all">
         {/* Header Branding */}
         <div className="flex flex-col items-center text-center mb-6">
-          <div className="p-3.5 rounded-2xl bg-[#b8f7e4]/10 border border-[#b8f7e4]/20 text-[#b8f7e4] mb-3 shadow-inner">
-            <ShieldLockIcon className="w-7 h-7 sm:w-8 sm:h-8 text-[#b8f7e4]" />
+          <div className="p-2.5 sm:p-3 rounded-2xl bg-[#b8f7e4]/10 border border-[#b8f7e4]/20 mb-3 shadow-inner flex items-center justify-center overflow-hidden w-16 h-16 sm:w-20 sm:h-20 shadow-[#b8f7e4]/10">
+            <video
+              src="/senha.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover rounded-xl mix-blend-screen bg-transparent pointer-events-none drop-shadow-[0_0_8px_rgba(184,247,228,0.5)]"
+            />
           </div>
           <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Gerador de Senhas

@@ -94,7 +94,7 @@ Certifique-se de ter instalado em sua máquina:
 
 1. **Clonar o repositório:**
    ```bash
-   git clone https://github.com/seu-usuario/password-generator.git
+   git clone https://github.com/nexuscleo/password-generator.git
    cd password-generator
    ```
 
@@ -179,5 +179,5 @@ Este projeto está sob a licença **MIT**. Para mais detalhes, consulte o arquiv
 ---
 
 <div align="center">
-  Desenvolvido com 💚 usando <strong>Next.js</strong> & <strong>Tailwind CSS</strong>.
+  Desenvolvido por nexus.DS usando <strong>Next.js</strong> & <strong>Tailwind CSS</strong>.
 </div>
