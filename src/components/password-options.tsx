@@ -43,43 +43,43 @@ export default function PasswordOptions({
 
   return (
     <div className="mt-6 space-y-2.5">
-      <span className="text-xs font-bold text-slate-300 tracking-wider uppercase">
+      <span className="text-[11px] font-bold text-zinc-400 tracking-wider uppercase">
         Regras da Senha
       </span>
-      <div className="grid grid-cols-1 gap-2.5 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
         {options.map((opt) => (
           <button
             key={opt.id}
             type="button"
             onClick={() => opt.onChange(!opt.checked)}
-            className={`flex items-center justify-between p-3.5 sm:p-3 rounded-2xl border text-left transition-all duration-200 cursor-pointer min-h-[50px] sm:min-h-0 ${
+            className={`flex items-center justify-between p-3.5 sm:p-3 rounded-2xl border text-left transition-all duration-200 cursor-pointer min-h-[52px] sm:min-h-0 ${
               opt.checked
-                ? "bg-[#17181c] border-[#b8f7e4]/60 shadow-md shadow-[#b8f7e4]/10 text-white"
-                : "bg-[#17181c]/50 border-[#353942] text-slate-400 hover:border-[#b8f7e4]/30 hover:text-slate-200"
+                ? "bg-[#1e2024] neu-flat border-white/20 text-white"
+                : "bg-[#17181b] neu-inset border-white/5 text-zinc-500 hover:text-zinc-300"
             }`}
           >
             <div className="flex flex-col">
               <span className="text-xs font-bold">{opt.label}</span>
               <span
                 className={`text-[10px] font-mono mt-0.5 font-semibold ${
-                  opt.checked ? "text-[#b8f7e4]" : "text-slate-500"
+                  opt.checked ? "text-zinc-200" : "text-zinc-600"
                 }`}
               >
                 {opt.badge}
               </span>
             </div>
 
-            {/* Custom SkyMint & Graphite Toggle Switch Pill */}
+            {/* Neumorphic Toggle Switch */}
             <div
-              className={`w-9 h-5 flex items-center rounded-full p-0.5 transition-colors duration-200 shrink-0 ${
-                opt.checked ? "bg-[#b8f7e4]" : "bg-[#353942]"
+              className={`w-9 h-5 flex items-center rounded-full p-0.5 transition-all duration-200 shrink-0 ${
+                opt.checked ? "bg-white" : "bg-[#121315] neu-inset"
               }`}
             >
               <div
-                className={`w-4 h-4 rounded-full transition-transform duration-200 shadow-sm ${
+                className={`w-4 h-4 rounded-full transition-transform duration-200 shadow-md ${
                   opt.checked
-                    ? "translate-x-4 bg-[#25272c]"
-                    : "translate-x-0 bg-[#17181c]"
+                    ? "translate-x-4 bg-black"
+                    : "translate-x-0 bg-zinc-600"
                 }`}
               />
             </div>

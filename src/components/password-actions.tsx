@@ -26,13 +26,13 @@ export default function PasswordActions({
 }: PasswordActionsProps) {
   return (
     <div className="mt-7 space-y-4">
-      {/* Generate Password Button - SkyMint Accent */}
+      {/* Generate Password Button - Pure Black & White Neumorphic Button */}
       <button
         type="button"
         onClick={onGenerate}
-        className="w-full py-3.5 px-6 rounded-2xl bg-[#b8f7e4] text-[#25272c] font-bold text-sm sm:text-base shadow-lg shadow-[#b8f7e4]/20 hover:shadow-[#b8f7e4]/35 hover:bg-[#a3f5de] active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer border border-[#b8f7e4]"
+        className="w-full py-4 px-6 rounded-2xl neu-button-primary font-bold text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer border border-white/20 tracking-wide"
       >
-        <SparklesIcon className="w-4 h-4 text-[#25272c]" />
+        <SparklesIcon className="w-5 h-5 text-black" />
         <span>Gerar Nova Senha</span>
       </button>
 

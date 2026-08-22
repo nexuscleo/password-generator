@@ -31,29 +31,27 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-3 sm:p-6 relative overflow-hidden bg-[#17181c]">
-      {/* Background SkyMint Ambient Glowing Orbs */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] bg-[#b8f7e4]/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-1/4 w-[280px] h-[280px] bg-[#b8f7e4]/5 rounded-full blur-[90px] pointer-events-none" />
+    <main className="min-h-screen flex items-center justify-center p-4 sm:p-6 relative overflow-hidden bg-[#16171a]">
+      {/* Background Soft Monochrome Ambient Glowing Orbs */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[550px] h-[400px] sm:h-[550px] bg-white/[0.03] rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Main Graphite Glass Card */}
-      <div className="relative z-10 w-full max-w-[440px] p-5 sm:p-8 rounded-3xl bg-[#25272c]/95 border border-[#353942] shadow-2xl shadow-black/60 backdrop-blur-2xl transition-all">
+      {/* Main Neumorphic Graphite Card */}
+      <div className="relative z-10 w-full max-w-[440px] p-6 sm:p-8 rounded-[32px] neu-card border border-white/5 transition-all">
         {/* Header Branding */}
         <div className="flex flex-col items-center text-center mb-6">
-          <div className="p-2.5 sm:p-3 rounded-2xl bg-[#b8f7e4]/10 border border-[#b8f7e4]/20 mb-3 shadow-inner flex items-center justify-center overflow-hidden w-16 h-16 sm:w-20 sm:h-20 shadow-[#b8f7e4]/10">
-            <video
-              src="/senha.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover rounded-xl mix-blend-screen bg-transparent pointer-events-none drop-shadow-[0_0_8px_rgba(184,247,228,0.5)]"
+          {/* Neumorphic Emblem Container for shield.png */}
+          <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-2xl bg-[#1e2024] neu-flat flex items-center justify-center p-4 mb-4 border border-white/5 transition-transform duration-300 hover:scale-105">
+            <img
+              src="./shield.png"
+              alt="Shield Logo"
+              className="w-10 h-10 sm:w-12 sm:h-12 object-contain filter invert contrast-200 drop-shadow-[0_2px_8px_rgba(255,255,255,0.25)]"
             />
           </div>
           <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
             Gerador de Senhas
           </h1>
-          <p className="text-xs text-slate-400 mt-1 max-w-[280px]">
+          <p className="text-xs text-zinc-400 mt-1 max-w-[280px]">
             Gere senhas seguras e personalizadas instantaneamente
           </p>
         </div>
@@ -79,10 +77,10 @@ export default function Home() {
         />
 
         {/* Footer info */}
-        <div className="mt-6 pt-4 border-t border-[#353942]/60 text-center">
-          <span className="text-[11px] text-slate-400 font-medium">
-            Padrão Militar • &copy; {new Date().getFullYear()}{" "}
-            <span className="text-[#b8f7e4]">nexus.DS</span>
+        <div className="mt-7 pt-4 border-t border-white/5 text-center">
+          <span className="text-[11px] text-zinc-500 font-medium">
+            Padrão Militar &bull; &copy; {new Date().getFullYear()}{" "}
+            <span className="text-white font-semibold">nexus.DS</span>
           </span>
         </div>
       </div>

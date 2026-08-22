@@ -24,9 +24,9 @@ type ShowPasswordProps = {
   copied: boolean;
 };
 
-// Calculate password strength
+// Calculate password strength in pure monochrome (black & white)
 function getPasswordStrength(password: string) {
-  if (!password) return { label: "", percent: 0, color: "bg-slate-700" };
+  if (!password) return { label: "", percent: 0, color: "bg-zinc-800", text: "text-zinc-500" };
   let score = 0;
   if (password.length >= 8) score += 25;
   if (password.length >= 12) score += 25;
@@ -34,10 +34,10 @@ function getPasswordStrength(password: string) {
   if (/[0-9]/.test(password)) score += 15;
   if (/[^A-Za-z0-9]/.test(password)) score += 20;
 
-  if (score < 40) return { label: "Fraca", percent: 25, color: "bg-rose-400", text: "text-rose-300" };
-  if (score < 70) return { label: "Média", percent: 50, color: "bg-amber-300", text: "text-amber-300" };
-  if (score < 90) return { label: "Forte", percent: 75, color: "bg-[#b8f7e4]", text: "text-[#b8f7e4]" };
-  return { label: "Muito Forte", percent: 100, color: "bg-[#b8f7e4]", text: "text-[#b8f7e4]" };
+  if (score < 40) return { label: "Fraca", percent: 25, color: "bg-zinc-600", text: "text-zinc-400" };
+  if (score < 70) return { label: "Média", percent: 50, color: "bg-zinc-400", text: "text-zinc-300" };
+  if (score < 90) return { label: "Forte", percent: 75, color: "bg-zinc-200", text: "text-zinc-100" };
+  return { label: "Muito Forte", percent: 100, color: "bg-white", text: "text-white font-extrabold" };
 }
 
 export default function ShowPassword({
@@ -49,9 +49,9 @@ export default function ShowPassword({
 
   return (
     <div className="mt-5 space-y-3">
-      {/* Password Card Container - Fully Responsive */}
-      <div className="relative group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-[#17181c] border border-[#353942] shadow-inner backdrop-blur-md transition-all duration-200 hover:border-[#b8f7e4]/40 min-w-0">
-        <span className="font-mono text-sm sm:text-base font-semibold tracking-wider text-[#b8f7e4] break-all select-all pr-2 min-w-0 flex-1">
+      {/* Password Inset Display Box - Pure Monochrome Neumorphism */}
+      <div className="relative group flex items-center justify-between p-4 rounded-2xl bg-[#17181b] neu-inset border border-white/5 transition-all duration-200 hover:border-white/10 min-w-0">
+        <span className="font-mono text-sm sm:text-base font-bold tracking-wider text-white break-all select-all pr-2 min-w-0 flex-1">
           {password || "Clique para gerar..."}
         </span>
 
@@ -59,20 +59,20 @@ export default function ShowPassword({
           <button
             onClick={onCopy}
             type="button"
-            className={`flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl font-bold text-xs transition-all duration-200 shrink-0 cursor-pointer ${
+            className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold text-xs transition-all duration-200 shrink-0 cursor-pointer ${
               copied
-                ? "bg-[#b8f7e4] text-[#25272c] shadow-sm shadow-[#b8f7e4]/30 scale-[1.02]"
-                : "bg-[#b8f7e4]/15 text-[#b8f7e4] border border-[#b8f7e4]/30 hover:bg-[#b8f7e4] hover:text-[#25272c]"
+                ? "bg-white text-black shadow-md shadow-white/20 scale-105"
+                : "neu-button-flat text-zinc-300 border border-white/5 hover:text-white"
             }`}
           >
             {copied ? (
               <>
-                <CheckIcon className="w-3.5 h-3.5 text-[#25272c]" />
+                <CheckIcon className="w-4 h-4 text-black" />
                 <span>Copiado!</span>
               </>
             ) : (
               <>
-                <CopyIcon className="w-3.5 h-3.5" />
+                <CopyIcon className="w-4 h-4 text-zinc-300" />
                 <span>Copiar</span>
               </>
             )}
@@ -80,16 +80,16 @@ export default function ShowPassword({
         )}
       </div>
 
-      {/* Password Strength Indicator */}
+      {/* Password Strength Indicator - Monochrome */}
       {password && (
         <div className="px-1 space-y-1.5">
           <div className="flex justify-between items-center text-xs">
-            <span className="text-slate-400 font-medium">Força da Senha:</span>
+            <span className="text-zinc-400 font-medium">Força da Senha:</span>
             <span className={`font-semibold ${strength.text}`}>
               {strength.label}
             </span>
           </div>
-          <div className="w-full h-1.5 bg-[#17181c] rounded-full overflow-hidden border border-[#353942]/60">
+          <div className="w-full h-2 bg-[#121315] neu-inset rounded-full overflow-hidden p-0.5 border border-white/5">
             <div
               className={`h-full transition-all duration-500 rounded-full ${strength.color}`}
               style={{ width: `${strength.percent}%` }}
